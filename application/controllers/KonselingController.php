@@ -3,8 +3,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class KonselingController extends CI_Controller {
 
-	public function home($id = '1')
+	public function home()
 	{
+		$id = $this->input->post('id', TRUE);
 		$this->load->model('Kategori_layanan_konseling_model','kategori_layanan_konseling');
 		$this->load->model('Layanan_konseling_model','layanan_konseling');
 		$data['kategori_layanan_konseling'] = $this->kategori_layanan_konseling->getAllKategori();
