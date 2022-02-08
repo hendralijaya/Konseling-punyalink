@@ -3,6 +3,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class KonselingController extends CI_Controller {
 
+	public function index()
+	{
+		$this->load->view('home_konseling/partials/head.php');
+		$this->load->view('home_konseling/partials/header.php');
+		$this->load->view('home_konseling/v_home_konseling.php');
+		$this->load->view('home_konseling/partials/footer.php');
+		$this->load->view('home_konseling/partials/js.php');
+	}
+	
 	public function home($id = '1')
 	{
 		$this->load->model('Kategori_layanan_konseling_model','kategori_layanan_konseling');
