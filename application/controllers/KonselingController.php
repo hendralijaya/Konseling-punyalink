@@ -5,21 +5,16 @@ class KonselingController extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('home_konseling/partials/head.php');
-		$this->load->view('home_konseling/partials/header.php');
-		$this->load->view('home_konseling/v_home_konseling.php');
-		$this->load->view('home_konseling/partials/footer.php');
-		$this->load->view('home_konseling/partials/js.php');
-	}
-	
-	public function home()
-	{
-		$id = $this->input->post('id', TRUE);
 		$this->load->model('Kategori_layanan_konseling_model','kategori_layanan_konseling');
 		$this->load->model('Layanan_konseling_model','layanan_konseling');
 		$data['kategori_layanan_konseling'] = $this->kategori_layanan_konseling->getAllKategori();
+		$id = NULL !== $this->input->post('id', TRUE) ? $this->input->post('id', TRUE) : $data['kategori_layanan_konseling'][0]['id'];
 		$data['layanan_konseling'] = $this->layanan_konseling->getLayananKonselingByCategoryId($id);
-		// tinggal load viewnya
+		$this->load->view('home_konseling/partials/head.php',$data);
+		$this->load->view('home_konseling/partials/header.php',$data);
+		$this->load->view('home_konseling/v_home_konseling.php',$data);
+		$this->load->view('home_konseling/partials/footer.php',$data);
+		$this->load->view('home_konseling/partials/js.php',$data);
 	}
 
 	public function daftarKonseling()
@@ -30,9 +25,9 @@ class KonselingController extends CI_Controller {
 	public function storeDaftarKonseling()
 	{
 		$dataJadwal = [
-			'tanggal' => $this->input->post('tanggal'),
-			'jam_mulai' => $this->input->post('jam_mulai'),
-			'jam_selesai' => $this->input->post('jam_selesai'),
+			'tanggal' => $this->input->post('tanggal',TRUE),
+			'jam_mulai' => $this->input->post('jam_mulai',TRUE),
+			'jam_selesai' => $this->input->post('jam_selesai',TRUE),
 		];
 		$this->load->model('Jadwal_konseling_model','jadwal_konseling');
 		$jadwal_id = $this->jadwal_konseling->storeJadwalAndReturnId($dataJadwal);
