@@ -1,0 +1,101 @@
+/* * {
+	box-sizing: border-box;
+} */
+.tab {
+	display: none;
+	width: 100%;
+	height: 50%;
+	margin: 0px auto;
+}
+.current {
+	display: block;
+}
+
+/* body {
+	background-color: #fff;
+} */
+#daftar_konselor .label {
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 27px;
+	font-family: var(--font_family);
+	color: #232323;
+	margin-bottom: 12px;
+}
+
+#daftar_konselor .label span {
+	font-size: 12px;
+	line-height: 150%;
+}
+
+form {
+	font-family: "Poppins", sans-serif;
+	width: 100%;
+}
+
+.form-group .form-control {
+	width: 100%;
+	height: 45px;
+	font-size: 17px;
+	font-family: var(--font_family);
+	border: 1px solid #b7b7b7;
+	border-radius: 12px;
+}
+
+.form-group textarea.form-control {
+	height: 150px;
+}
+
+button {
+	background-color: var(--green);
+	color: #ffffff;
+	padding: 12px 24px;
+	font-family: var(--font_family);
+	cursor: pointer;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 21px;
+	border-radius: 8px;
+	border: 1px solid transparent;
+}
+
+button:hover {
+	border: 1px solid var(--green);
+	background-color: transparent;
+	color: var(--green);
+}
+
+.previous {
+	background-color: #b7b7b7;
+}
+
+.steps {
+	display: flex;
+	margin-bottom: 60px;
+}
+
+.step {
+	color: #d7d7d7;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 27px;
+	font-family: var(--font_family);
+	border-bottom: 10px solid #d7d7d7;
+	display: inline-block;
+	position: relative;
+	margin-bottom: 30px;
+	padding: 0 10px 20px 10px;
+	flex-grow: 1;
+	flex-basis: 0;
+	margin: 0 10px;
+}
+
+.step.active {
+	color: var(--green);
+	border-bottom: 10px solid var(--green);
+}
+
+.error {
+	color: #f00;
+	font-size: 14px;
+}
