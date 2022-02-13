@@ -54,37 +54,37 @@ class KonselingController extends CI_Controller {
 	public function storeDaftarKonselor()
 	{
 		$dataInformasiPribadi = [
-			'nama' => $this->input->post('nama'),
-			'email' => $this->input->post('email'),
-			'tanggal_lahir' => $this->input->post('tanggal_lahir'),
-			'jenis_kelamin' => $this->input->post('jenis_kelamin'),
-			'no_hp' => $this->input->post('no_hp'),
-			'no_ktp' => $this->input->post('no_ktp'),
-			'provinsi' => $this->input->post('provinsi'),
-			'kabupaten_kota' => $this->input->post('kabupaten_kota'),
-			'alamat' => $this->input->post('alamat'),
+			'nama' => $this->input->post('nama',TRUE),
+			'email' => $this->input->post('email',TRUE),
+			'tanggal_lahir' => $this->input->post('tanggal_lahir',TRUE),
+			'jenis_kelamin' => $this->input->post('jenis_kelamin',TRUE),
+			'no_hp' => $this->input->post('no_hp',TRUE),
+			'no_ktp' => $this->input->post('no_ktp',TRUE),
+			'provinsi' => $this->input->post('provinsi',TRUE),
+			'kabupaten_kota' => $this->input->post('kabupaten_kota',TRUE),
+			'alamat' => $this->input->post('alamat',TRUE),
 		];
 		$dataPendidikanPengalaman = [
-			'gelar_S1' => $this->input->post('gelar_S1'),
-			'universitas_S1' => $this->input->post('universitas_S1'),
-			'jurusan_S1' => $this->input->post('jurusan_S1'),
-			'angkatan_S1' => $this->input->post('angkatan_S1'),
-			'dari_S1' => $this->input->post('dari_S1'),
-			'sampai_S1' => $this->input->post('sampai_S1'),
-			'gelar_S2' => $this->input->post('gelar_S2'),
-			'universitas_S2' => $this->input->post('universitas_S2'),
-			'jurusan_S2' => $this->input->post('jurusan_S2'),
-			'angkatan_S2' => $this->input->post('angkatan_S2'),
-			'dari_S2' => $this->input->post('dari_S2'),
-			'sampai_S2' => $this->input->post('sampai_S2'),
-			'pekerjaan' => $this->input->post('pekerjaan'),
-			'organisasi' => $this->input->post('organisasi'),
+			'gelar_S1' => $this->input->post('gelar_S1',TRUE),
+			'universitas_S1' => $this->input->post('universitas_S1',TRUE),
+			'jurusan_S1' => $this->input->post('jurusan_S1',TRUE),
+			'angkatan_S1' => $this->input->post('angkatan_S1',TRUE),
+			'dari_S1' => $this->input->post('dari_S1',TRUE),
+			'sampai_S1' => $this->input->post('sampai_S1',TRUE),
+			'gelar_S2' => $this->input->post('gelar_S2',TRUE),
+			'universitas_S2' => $this->input->post('universitas_S2',TRUE),
+			'jurusan_S2' => $this->input->post('jurusan_S2',TRUE),
+			'angkatan_S2' => $this->input->post('angkatan_S2',TRUE),
+			'dari_S2' => $this->input->post('dari_S2',TRUE),
+			'sampai_S2' => $this->input->post('sampai_S2',TRUE),
+			'pekerjaan' => $this->input->post('pekerjaan',TRUE),
+			'organisasi' => $this->input->post('organisasi',TRUE),
 		];
 		$dataInformasiRekeningBank = [
-			'nama' => $this->input->post('nama_bank'),
-			'alamat_cabang' => $this->input->post('alamat_cabang'),
-			'nama_rekening' => $this->input->post('nama_rekening'),
-			'nomor_rekening' => $this->input->post('nomor_rekening')
+			'nama' => $this->input->post('nama_bank',TRUE),
+			'alamat_cabang' => $this->input->post('alamat_cabang',TRUE),
+			'nama_rekening' => $this->input->post('nama_rekening',TRUE),
+			'nomor_rekening' => $this->input->post('nomor_rekening',TRUE)
 		];
 		$this->load->model('Konselor_model','konselor');
 		$informasiPribadiId = $this->konselor->storeInformasiPribadiKonselor($dataInformasiPribadi);
