@@ -65,7 +65,7 @@ class KonselingController extends CI_Controller {
 		$this->load->view('home_konseling/v_daftar_konselor', $data);
 		$this->load->view('home_konseling/partials/footer.php');
 		$this->load->view('home_konseling/partials/js.php');
-		}
+		}else {
 		$dataInformasiPribadi = [
 			'nama' => $this->input->post('nama',TRUE),
 			'email' => $this->input->post('email',TRUE),
@@ -99,17 +99,19 @@ class KonselingController extends CI_Controller {
 			'nama_rekening' => $this->input->post('nama_rekening',TRUE),
 			'nomor_rekening' => $this->input->post('nomor_rekening',TRUE)
 		];
-		$this->load->model('Konselor_model','konselor');
-		$informasiPribadiId = $this->konselor->storeInformasiPribadiKonselor($dataInformasiPribadi);
-		$pendidikanPengalamanId = $this->konselor->storePendidikanPengalaman($dataPendidikanPengalaman);
-		$informasiRekeningBankId = $this->konselor->storeInformasiRekeningBankKonselor($dataInformasiRekeningBank);
+		$this->load->model('konseling_model');
+		$informasiPribadiId = $this->konseling_model->storeInformasiPribadiKonselor($dataInformasiPribadi);
+		$pendidikanPengalamanId = $this->konseling_model->storePendidikanPengalaman($dataPendidikanPengalaman);
+		$informasiRekeningBankId = $this->konseling_model->storeInformasiRekeningBankKonselor($dataInformasiRekeningBank);
 
 		$dataKonselor = [
 			'informasi_pribadi_konselor_id' => $informasiPribadiId,
 			'informasi_rekening_bank_konselor_id' => $informasiRekeningBankId,
 			'pendidikan_pengalaman_konselor_id' => $pendidikanPengalamanId
 		];
-		$this->konselor->storeKonselor($dataKonselor);
+		$idKonselor = $this->konseling_model->storeKonselor($dataKonselor);
+		$this->session->set_userdata($idKonselor);
+		}
 	}
 
 	function get_kab_kota()
@@ -135,6 +137,13 @@ class KonselingController extends CI_Controller {
         $callback = array('list_kota' => $lists); // Masukan variabel lists tadi ke dalam array $callback dengan index array : list_kota
         echo json_encode($callback); // konversi varibael $callback menjadi JSON
     }
+	public function testDasarKonselor()
+	{
+		$this->load->model('Konseling_model');
+		$data['kategori'] = $this->Konseling_model->getAllKategoriTestDasar();
+		// Load view data
+		
+	}
 	
 	public function storeDaftarKonseling()
 	{

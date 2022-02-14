@@ -48,6 +48,7 @@ class Konseling_model extends CI_Model
     public function storeKonselor($data)
     {
         $this->db->insert('konselor',$data);
+        return $this->db->insert_id();
     }
 
     //provinsi db_punyalink
@@ -60,5 +61,16 @@ class Konseling_model extends CI_Model
     {
         $this->db_master->where('id_prov', $id_prov);
         return $this->db_master->get('kabupaten')->result();
+    }
+
+    public function getAllKategoriTestDasar()
+    {
+        $this->db->select('*')->from('kategori_test_dasar_konselor');
+        return $this->db->get()->result_array();
+    }
+    public function getAllSubkategoriTestDasar($id)
+    {
+        $this->db->select('*')->from('subkategori_test_dasar_konselor')->where('kategori_test_dasar_konselor_id', $id);
+        return $this->db->get()->result_array();
     }
 }
