@@ -7,7 +7,7 @@
                         <div class="col-lg-3">
                             <div class="logo">
                                 <a href="#">
-                                    <img src="./assets_home_konseling/img/Logo_Punya_Link_Green 2.png" width="180" alt="">
+                                    <img src="<?php echo base_url()?>assets_home_konseling/img/Logo_Punya_Link_Green 2.png" width="180" alt="">
                                 </a>
                             </div>
                         </div>

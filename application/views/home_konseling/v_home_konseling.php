@@ -27,10 +27,11 @@
                 <h2>Konseling PunyaLink</h2>
                 <p style="margin-top: 24px;">Mari, temukan langkah baik dan solusi untuk masalah psikologis kamu. Temukan hal baik bersama kami, PunyaLink.</p>
                 <p style="margin-top: 48px;">Pilih kategori paket konseling anda</p>
+                
                 <ul id="list_kategori">
-                    <li><a href="#" class="btn_ctgr active">Chat</a></li>
-                    <li><a href="#" class="btn_ctgr">Call</a></li>
-                    <li><a href="#" class="btn_ctgr">Video Call</a></li>
+                    <?php foreach ($kategori_layanan_konseling as $data) :?>
+                        <li><a href="#" class="btn_ctgr"><?php echo $data['nama']?></a></li>
+                    <?php endforeach; ?>
                 </ul>
             </div>
         </div>
@@ -232,7 +233,7 @@
     <div class="container">
         <div class="tb text-center px-lg-5">
             <h2>Ingin menjadi konselor? segera daftarkan diri anda. dan temukan hal baik bersama kami, PunyaLink </h2>
-            <a href="#" class="btn_k">
+            <a href="<?php echo base_url('konseling-controller/konselor'); ?>" class="btn_k">
                 <span>Masuk Sebagai Konselor &nbsp; </span>
                 <ion-icon name="chevron-forward-outline"></ion-icon>
             </a>

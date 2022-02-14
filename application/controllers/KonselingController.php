@@ -5,8 +5,10 @@ class KonselingController extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->model('Kategori_layanan_konseling_model','kategori_layanan_konseling');
-		$this->load->model('Layanan_konseling_model','layanan_konseling');
+		// $this->load->model('Kategori_layanan_konseling_model','kategori_layanan_konseling');
+		// $this->load->model('Layanan_konseling_model','layanan_konseling');
+		$this->load->model('Konseling_model','kategori_layanan_konseling');
+		$this->load->model('Konseling_model','layanan_konseling');
 		$data['kategori_layanan_konseling'] = $this->kategori_layanan_konseling->getAllKategori();
 		$id = NULL !== $this->input->post('id', TRUE) ? $this->input->post('id', TRUE) : $data['kategori_layanan_konseling'][0]['id'];
 		$data['layanan_konseling'] = $this->layanan_konseling->getLayananKonselingByCategoryId($id);
@@ -19,8 +21,39 @@ class KonselingController extends CI_Controller {
 
 	public function daftarKonseling()
 	{
-		$this->load->view('');
+		$this->load->model('Konseling_model','provinsi');
+		$data['provinsi'] = $this->provinsi->getProvinsi();
+
+		$this->load->view('home_konseling/partials/head.php');
+		$this->load->view('home_konseling/partials/header.php');
+		$this->load->view('home_konseling/v_daftar_konselor', $data);
+		$this->load->view('home_konseling/partials/footer.php');
+		$this->load->view('home_konseling/partials/js.php');
 	}
+
+	function get_kab_kota()
+    {
+        // $id = $this->input->post('id');
+        // $data = $this->data_model->getKabKota($id);
+        // echo json_encode($data);
+
+
+        // Ambil data ID Provinsi yang dikirim via ajax post
+		$this->load->model('Konseling_model','kabkota');
+        $id_provinsi = $this->input->post('id_provinsi');
+        $kota = $this->kabkota->getKabKota($id_provinsi);
+
+
+        // Buat variabel untuk menampung tag-tag option nya
+        // Set defaultnya dengan tag option Pilih
+        $lists = "<option value='' selected='true' disabled='disabled'>Pilih Kab/Kota</option>";
+        foreach ($kota as $data) {
+            $lists .= "<option value='" . $data->nama . "'>" . $data->nama . "</option>"; // Tambahkan tag option ke variabel $lists
+            // $lists = $data->nama;
+        }
+        $callback = array('list_kota' => $lists); // Masukan variabel lists tadi ke dalam array $callback dengan index array : list_kota
+        echo json_encode($callback); // konversi varibael $callback menjadi JSON
+    }
 	
 	public function storeDaftarKonseling()
 	{
@@ -86,6 +119,8 @@ class KonselingController extends CI_Controller {
 			'nama_rekening' => $this->input->post('nama_rekening',TRUE),
 			'nomor_rekening' => $this->input->post('nomor_rekening',TRUE)
 		];
+		var_dump($dataInformasiPribadi , $dataInformasiRekeningBank);
+		die();
 		$this->load->model('Konselor_model','konselor');
 		$informasiPribadiId = $this->konselor->storeInformasiPribadiKonselor($dataInformasiPribadi);
 		$pendidikanPengalamanId = $this->konselor->storePendidikanPengalaman($dataPendidikanPengalaman);

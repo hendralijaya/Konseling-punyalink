@@ -32,7 +32,7 @@
                     <p class="sub">Dapatkan notifikasi dari kami terkait informasi lowongan terbaru</p>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-6">
-                    <img style="margin-bottom: 30px;" src="./assets_home_konseling/img/Logo_Punya_Link_Green 2.png" alt="PunyaLink">
+                    <img style="margin-bottom: 30px;" src="<?php echo base_url() ?>assets_home_konseling/img/Logo_Punya_Link_Green 2.png" alt="PunyaLink">
                     <ul>
                        <li>info@punyalink.com</li>
                        <li>+62 823 11100 580</li>

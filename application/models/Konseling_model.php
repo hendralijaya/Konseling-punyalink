@@ -49,4 +49,16 @@ class Konseling_model extends CI_Model
     {
         $this->db->insert('konselor',$data);
     }
+
+    //provinsi db_punyalink
+    public function getProvinsi()
+    {
+        return $this->db_master->get('provinsi')->result();
+    }
+
+    public function getKabKota($id_prov)
+    {
+        $this->db_master->where('id_prov', $id_prov);
+        return $this->db_master->get('kabupaten')->result();
+    }
 }
