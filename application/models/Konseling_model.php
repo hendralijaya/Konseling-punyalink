@@ -82,4 +82,9 @@ class Konseling_model extends CI_Model
         $this->db->where('subkategori_id', $id);
         $this->db->delete('skill_konselor');
     }
+// Khusus Dokumen Konselor
+    public function storeDokumenKonselor($data)
+    {
+        $this->db->insert('dokumen_konselor',$data);
+    }
 }

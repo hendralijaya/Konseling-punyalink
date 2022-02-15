@@ -1,6 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
 class KonselingController extends CI_Controller {
 
 	public function index()
@@ -110,7 +113,34 @@ class KonselingController extends CI_Controller {
 			'pendidikan_pengalaman_konselor_id' => $pendidikanPengalamanId
 		];
 		$idKonselor = $this->konseling_model->storeKonselor($dataKonselor);
-		$this->session->set_userdata($idKonselor);
+		$this->session->set_userdata('konselor_id',$idKonselor);
+		}
+	}
+	public function dokumenKonselor()
+	{
+		if($this->form_validation->run() == FALSE){
+			// load view
+		}else {
+			$fotoPas = uploadFile('foto_pas','./uploads/konselor/','jpg|png|jpeg');
+			$fotoKtp = uploadFile('foto_ktp','./uploads/konselor/','jpg|png|jpeg',false);
+			$fotoIjazahS1 = uploadFile('foto_ijazah_s1','./uploads/konselor/','pdf',false);
+			$fotoIjazahS2 = uploadFile('foto_ijazah_s2','./uploads/konselor/','pdf',false);
+			$CV = uploadFile('cv','./uploads/konselor/','pdf',false);
+			$skck = uploadFile('skck','./uploads/konselor/','pdf',false);
+			$npwp = uploadFile('npwp','./uploads/konselor/','pdf',false);
+			$this->load->model('konseling_model');
+			$data = [
+				'foto_pas' => $fotoPas,
+				'foto_ktp' => $fotoKtp,
+				'foto_ijazah_s1' => $fotoIjazahS1,
+				'foto_ijazah_s2' => $fotoIjazahS2,
+				'cv' => $CV,
+				'skck' => $skck,
+				'npwp' => $npwp,
+				'konselor_id' => $this->session->userdata('konselor_id')
+			];
+			$this->konseling_model->storeDokumenKonselor($data);
+			// redirect ke menunggu verifikasi
 		}
 	}
 
@@ -187,4 +217,6 @@ class KonselingController extends CI_Controller {
 		$this->load->model('Konseling_model');
 		$this->Konseling_model->deleteSkillKonselorById($subkategori);
 	}
+
+
 }
