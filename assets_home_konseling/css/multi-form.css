@@ -42,11 +42,15 @@ form {
 	border-radius: 12px;
 }
 
+.form-group select.form-control {
+	height: 45px !important;
+}
+
 .form-group textarea.form-control {
 	height: 150px;
 }
 
-button {
+.btn_next {
 	background-color: var(--green);
 	color: #ffffff;
 	padding: 12px 24px;
@@ -59,7 +63,7 @@ button {
 	border: 1px solid transparent;
 }
 
-button:hover {
+.btn_next:hover {
 	border: 1px solid var(--green);
 	background-color: transparent;
 	color: var(--green);
@@ -67,6 +71,21 @@ button:hover {
 
 .previous {
 	background-color: #b7b7b7;
+	color: #ffffff;
+	padding: 12px 24px;
+	font-family: var(--font_family);
+	cursor: pointer;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 21px;
+	border-radius: 8px;
+	border: 1px solid transparent;
+}
+
+.previous:hover {
+	border: 1px solid #b7b7b7;
+	background-color: transparent;
+	color: #b7b7b7;
 }
 
 .steps {
@@ -98,4 +117,5 @@ button:hover {
 .error {
 	color: #f00;
 	font-size: 14px;
+	font-weight: 400 !important;
 }

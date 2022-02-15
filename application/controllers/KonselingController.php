@@ -116,10 +116,16 @@ class KonselingController extends CI_Controller {
 		$this->session->set_userdata('konselor_id',$idKonselor);
 		}
 	}
+
 	public function dokumenKonselor()
 	{
 		if($this->form_validation->run() == FALSE){
 			// load view
+			$this->load->view('home_konseling/partials/head.php');
+			$this->load->view('home_konseling/partials/header.php');
+			$this->load->view('home_konseling/v_dokumen.php');
+			$this->load->view('home_konseling/partials/footer.php');
+			$this->load->view('home_konseling/partials/js.php');
 		}else {
 			$fotoPas = uploadFile('foto_pas','./uploads/konselor/','jpg|png|jpeg');
 			$fotoKtp = uploadFile('foto_ktp','./uploads/konselor/','jpg|png|jpeg',false);
@@ -141,8 +147,10 @@ class KonselingController extends CI_Controller {
 			];
 			$this->konseling_model->storeDokumenKonselor($data);
 			// redirect ke menunggu verifikasi
+			redirect('konselingcontroller/verifikasi');
 		}
 	}
+
 
 	function get_kab_kota()
     {
@@ -167,12 +175,18 @@ class KonselingController extends CI_Controller {
         $callback = array('list_kota' => $lists); // Masukan variabel lists tadi ke dalam array $callback dengan index array : list_kota
         echo json_encode($callback); // konversi varibael $callback menjadi JSON
     }
+
+
 	public function testDasarKonselor()
 	{
 		$this->load->model('Konseling_model');
 		$data['kategori'] = $this->Konseling_model->getAllKategoriTestDasar();
 		// Load view data
-		
+		$this->load->view('home_konseling/partials/head.php',$data);
+		$this->load->view('home_konseling/partials/header.php',$data);
+		$this->load->view('home_konseling/v_test_konseor.php',$data);
+		$this->load->view('home_konseling/partials/footer.php',$data);
+		$this->load->view('home_konseling/partials/js.php',$data);
 	}
 	
 	// public function storeDaftarKonseling()
@@ -218,5 +232,11 @@ class KonselingController extends CI_Controller {
 		$this->Konseling_model->deleteSkillKonselorById($subkategori);
 	}
 
-
+	public function verifikasi(){
+		$this->load->view('home_konseling/partials/head.php');
+		$this->load->view('home_konseling/partials/header.php');
+		$this->load->view('home_konseling/v_verifikasi.php');
+		$this->load->view('home_konseling/partials/footer.php');
+		$this->load->view('home_konseling/partials/js.php');
+	}
 }

@@ -15,9 +15,11 @@
     <!-- CSS -->
     <link rel="stylesheet" href="<?php echo base_url()?>assets_home_konseling/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <link rel="stylesheet" href="<?php echo base_url()?>asset/bootstrap-daterangepicker/daterangepicker.css">
-    <link rel="stylesheet" href="<?php echo base_url() ?>asset/selectric/public/selectric.css">
+    <link rel="stylesheet" href="<?php echo base_url()?>asset/node_modules/bootstrap-daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="<?php echo base_url()?>asset/node_modules/selectric/public/selectric.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets_home_konseling/css/multi-form.css?v2" />
-    <link  rel="stylesheet" href="https://www.jqueryscript.net/css/jquerysctipttop.css" />
+    <link rel="stylesheet" href="https://www.jqueryscript.net/css/jquerysctipttop.css" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   </head>
   <body>

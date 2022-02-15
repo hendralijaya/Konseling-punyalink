@@ -336,6 +336,14 @@ p {
 	color: #fff;
 	border-radius: 12px;
 	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+	border: 1px solid transparent;
+}
+
+.btn_k:hover {
+	background-color: transparent;
+	border: 1px solid var(--green);
+	text-decoration: none;
+	color: var(--green);
 }
 
 .btn_k ion-icon {
@@ -642,109 +650,37 @@ footer .copyzr {
 }
 
 /* ====================================== DAFTAR ===================================== */
-#daftar_konselor {
+.section_form {
 	background-color: #f7f9ff;
 	padding-top: 200px;
 	padding-bottom: 138px;
 	min-height: 150vh;
 }
 
-#daftar_konselor .form {
+.form {
 	background-color: #fff;
-	padding: 30px 78px;
+	padding: 65px 78px;
 	border-radius: 24px;
 }
 
-#daftar_konselor .form .title {
+.form .title {
 	color: var(--font);
 	font-weight: 600;
 	font-size: 24px;
 	line-height: 150%;
-	margin-bottom: 120px;
+	margin-bottom: 64px;
 	font-family: var(--font_family);
 }
 
-/* input {
-	padding: 10px;
-	width: 100%;
-	font-size: 17px;
-	font-family: var(--font_family);
-	border: 1px solid #aaaaaa;
-} */
-
-/* Mark input boxes that gets an error on validation: */
-/* input.invalid {
-	background-color: #ffdddd;
-} */
-
-/* Hide all steps by default: */
-/* .tab {
-	display: none;
+.form .info_ {
+	font-style: normal;
+	font-weight: 600 !important;
+	font-size: 18px !important;
+	line-height: 27px !important;
+	margin-bottom: 48px;
 }
 
-#daftar_konselor button {
-	background-color: var(--green);
-	color: #ffffff;
-	padding: 12px 24px;
-	font-family: var(--font_family);
-	cursor: pointer;
-	font-weight: 500;
-	font-size: 14px;
-	line-height: 21px;
-	border-radius: 8px;
-	border: 1px solid transparent;
-}
-
-#daftar_konselor button:hover {
-	border: 1px solid var(--green);
-	background-color: transparent;
-	color: var(--green);
-}
-
-#daftar_konselor #prevBtn {
-	background-color: #d7d7d7;
-	color: var(--font);
-}
-
-#daftar_konselor #prevBtn:hover {
-	background-color: var(--font);
-	border-color: 1px solid transparent;
-	color: #d7d7d7;
-}
-
-.steps {
-	display: flex;
-	margin-bottom: 60px;
-}
-
-.step {
-	color: #d7d7d7;
-	font-weight: 500;
-	font-size: 18px;
-	line-height: 27px;
-	font-family: var(--font_family);
-	border-bottom: 10px solid #d7d7d7;
-	display: inline-block;
-	position: relative;
-	margin-bottom: 30px;
-	padding: 0 10px 20px 10px;
-	flex-grow: 1;
-	flex-basis: 0;
-	margin: 0 10px;
-}
-
-.step.active {
-	color: var(--green);
-	border-bottom: 10px solid var(--green);
-} */
-
-/* Mark the steps that are finished and valid: */
-/* .step.finish {
-	color: var(--green);
-	border-bottom: 10px solid var(--green);
-} */
-
-.selectric {
+/* .selectric {
 	background-color: #fdfdff;
 	border-color: #e4e6fc;
 	min-height: 42px;
@@ -798,4 +734,103 @@ footer .copyzr {
 .selectric-items li.highlighted {
 	background-color: #23ac39;
 	color: #fff;
+} */
+
+.clickable {
+	cursor: pointer;
+}
+
+.panel {
+	border: 1px solid #b7b7b7 !important;
+}
+
+.panel-heading span {
+	margin-top: -20px;
+	font-size: 15px;
+}
+
+.panel-title {
+	font-weight: bold !important;
+	font-size: 18px !important;
+	line-height: 27px !important;
+	font-family: var(--font_family);
+}
+
+.panel-body {
+	padding: 10px 30px !important;
+}
+
+.panel-body label {
+	font-weight: normal !important;
+	font-size: 18px !important;
+	line-height: 27px !important;
+	font-family: var(--font_family) !important;
+}
+
+/* ==================== DOKUMEN =============================== */
+
+#files-area {
+	width: 30%;
+	margin: 0 auto;
+}
+.file-block {
+	border-radius: 10px;
+	background-color: rgba(144, 163, 203, 0.2);
+	margin: 5px;
+	color: initial;
+	display: inline-flex;
+}
+
+.file-block > span.name {
+	padding-right: 10px;
+	width: max-content;
+	display: inline-flex;
+}
+
+.file-delete {
+	display: flex;
+	width: 24px;
+	color: initial;
+	background-color: #6eb4ff00;
+	font-size: large;
+	justify-content: center;
+	margin-right: 3px;
+	cursor: pointer;
+}
+.file-delete:hover {
+	background-color: rgba(144, 163, 203, 0.2);
+	border-radius: 10px;
+}
+
+.file-delete > span {
+	transform: rotate(45deg);
+}
+
+/* ============================ VERIVIKASI ============================ */
+
+#verifikasi .form .text_v {
+	padding: 0 17.7%;
+}
+
+#verifikasi .form .text_v .text_v_sub {
+	font-family: var(--font_family);
+	font-style: normal;
+	font-weight: 500 !important;
+	font-size: 24px !important;
+	line-height: 150% !important;
+	letter-spacing: -0.02em;
+}
+
+#verifikasi .form .img_v {
+	width: 100%;
+	max-width: 278px;
+	margin: 138px 0 118px 0;
+}
+
+#verifikasi .form .text_ver {
+	font-family: var(--font_family);
+	font-style: normal;
+	font-weight: 300;
+	font-size: 24px;
+	line-height: 150%;
 }

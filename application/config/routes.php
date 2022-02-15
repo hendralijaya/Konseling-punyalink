@@ -54,6 +54,6 @@ $route['default_controller'] = 'KonselingController';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['konseling-controller'] = 'KonselingController';
-$route['konseling-controller/konselor'] = "KonselingController/daftarKonseling";
+$route['konseling-controller/konselor'] = "KonselingController/daftarKonselor";
 $route['konseling-controller/storeDaftarKonseling'] = "KonselingController/storeDaftarKonseling";
 $route['konseling-controller/home'] = "KonselingController/home";

@@ -1,11 +1,11 @@
-<main id="daftar_konselor">
+<main id="daftar_konselor" class="section_form">
     <div class="container">
         <div class="form">
             <h1 class="title text-center">Daftar Menjadi Konselor</h1>
             <form id="myForm" action="<?= site_url('KonselingController/storeDaftarKonselor') ?>" method="POST">
                 <div class="row">
                     <div class="col-12">
-                        <div class="steps">
+                        <div class="steps" style="margin-top:100px">
                             <div class="step active">
                                 1. Informasi Pribadi
                             </div>
@@ -158,8 +158,8 @@
                 <div style="overflow: auto">
                     <div style="float: right">
                     <button type="button" class="previous">Previous</button>
-                    <button type="button" class="next">Next</button>
-                    <button type="button" class="submit">Submit</button>
+                    <button type="button" class="next btn_next">Next</button>
+                    <button type="button" class="submit btn_next">Submit</button>
                     </div>
                 </div>
                 <!-- Circles which indicates the steps of the form: -->
