@@ -73,4 +73,13 @@ class Konseling_model extends CI_Model
         $this->db->select('*')->from('subkategori_test_dasar_konselor')->where('kategori_test_dasar_konselor_id', $id);
         return $this->db->get()->result_array();
     }
+    public function storeSkillKonselor($data)
+    {
+        $this->db->insert('skill_konselor',$data);
+    }
+    public function deleteSkillKonselorById($id)
+    {
+        $this->db->where('subkategori_id', $id);
+        $this->db->delete('skill_konselor');
+    }
 }

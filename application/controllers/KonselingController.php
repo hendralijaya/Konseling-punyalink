@@ -145,27 +145,46 @@ class KonselingController extends CI_Controller {
 		
 	}
 	
-	public function storeDaftarKonseling()
+	// public function storeDaftarKonseling()
+	// {
+	// 	$dataJadwal = [
+	// 		'tanggal' => $this->input->post('tanggal',TRUE),
+	// 		'jam_mulai' => $this->input->post('jam_mulai',TRUE),
+	// 		'jam_selesai' => $this->input->post('jam_selesai',TRUE),
+	// 	];
+	// 	$this->load->model('Jadwal_konseling_model','jadwal_konseling');
+	// 	$jadwal_id = $this->jadwal_konseling->storeJadwalAndReturnId($dataJadwal);
+	// 	$dataDaftarKonseling = [
+	// 		'nama' => $this->input->post('nama'),
+	// 		'email' => $this->input->post('email'),
+	// 		'no_wa' => $this->input->post('no_wa'),
+	// 		'jenis_kelamin' => $this->input->post('jenis_kelamin'),
+	// 		'usia' => $this->input->post('usia'),
+	// 		'domisili' => $this->input->post('domisili'),
+	// 		'pendidikan_terakhir' => $this->input->post('pendidikan_terakhir'),
+	// 		'keluhan' => $this->input->post('keluhan'),
+	// 		'jadwal_konseling_id' => $jadwal_id
+	// 	];
+	// 	$this->load->model('Client_konseling_model','client_konseling');
+	// 	$this->client_konseling->storeClientKonseling($dataDaftarKonseling);
+	// }
+
+	public function storeSkillKonselor()
 	{
-		$dataJadwal = [
-			'tanggal' => $this->input->post('tanggal',TRUE),
-			'jam_mulai' => $this->input->post('jam_mulai',TRUE),
-			'jam_selesai' => $this->input->post('jam_selesai',TRUE),
+		$idKonselor = $this->session->userdata('idKonselor');
+		$dataSkill = [
+			'konselor_id' => $idKonselor,
+			'kategori_id' => $this->input->post('kategori_id'),
+			'subkategori_id' => $this->input->post('subkategori_id'),
 		];
-		$this->load->model('Jadwal_konseling_model','jadwal_konseling');
-		$jadwal_id = $this->jadwal_konseling->storeJadwalAndReturnId($dataJadwal);
-		$dataDaftarKonseling = [
-			'nama' => $this->input->post('nama'),
-			'email' => $this->input->post('email'),
-			'no_wa' => $this->input->post('no_wa'),
-			'jenis_kelamin' => $this->input->post('jenis_kelamin'),
-			'usia' => $this->input->post('usia'),
-			'domisili' => $this->input->post('domisili'),
-			'pendidikan_terakhir' => $this->input->post('pendidikan_terakhir'),
-			'keluhan' => $this->input->post('keluhan'),
-			'jadwal_konseling_id' => $jadwal_id
-		];
-		$this->load->model('Client_konseling_model','client_konseling');
-		$this->client_konseling->storeClientKonseling($dataDaftarKonseling);
+		$this->load->model('Konseling_model');
+		$this->Konseling_model->storeSkillKonselor($dataSkill);
+	}
+
+	public function deleteSkillKonselor()
+	{
+		$subkategori = $this->input->post('subkategori_id');
+		$this->load->model('Konseling_model');
+		$this->Konseling_model->deleteSkillKonselorById($subkategori);
 	}
 }
