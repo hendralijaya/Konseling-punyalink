@@ -87,4 +87,10 @@ class Konseling_model extends CI_Model
     {
         $this->db->insert('dokumen_konselor',$data);
     }
+
+    public function getKategori_id($id)
+    {
+        $this->db->select('kategori_test_dasar_konselor_id')->from('subkategori_test_dasar_konselor')->where('id', $id);
+        return $this->db->get()->result_array();
+    }
 }

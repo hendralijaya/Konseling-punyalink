@@ -145,6 +145,9 @@ class KonselingController extends CI_Controller {
 				'npwp' => $npwp,
 				'konselor_id' => $this->session->userdata('konselor_id')
 			];
+
+			var_dump($data);
+			die();
 			$this->konseling_model->storeDokumenKonselor($data);
 			// redirect ke menunggu verifikasi
 			redirect('konselingcontroller/verifikasi');
@@ -184,7 +187,7 @@ class KonselingController extends CI_Controller {
 		// Load view data
 		$this->load->view('home_konseling/partials/head.php',$data);
 		$this->load->view('home_konseling/partials/header.php',$data);
-		$this->load->view('home_konseling/v_test_konseor.php',$data);
+		$this->load->view('home_konseling/v_test_konselor.php',$data);
 		$this->load->view('home_konseling/partials/footer.php',$data);
 		$this->load->view('home_konseling/partials/js.php',$data);
 	}
@@ -215,13 +218,18 @@ class KonselingController extends CI_Controller {
 
 	public function storeSkillKonselor()
 	{
+		$this->load->model('Konseling_model');
 		$idKonselor = $this->session->userdata('idKonselor');
+
+		// $kategori = $this->Konseling_model->getKategori_id(array($this->input->post('subkategori_id')));
+		// $kategori_id = array($kategori['kategori_test_dasar_konselor_id']);
+		// var_dump($kategori);
+		// die();
 		$dataSkill = [
 			'konselor_id' => $idKonselor,
 			'kategori_id' => $this->input->post('kategori_id'),
 			'subkategori_id' => $this->input->post('subkategori_id'),
 		];
-		$this->load->model('Konseling_model');
 		$this->Konseling_model->storeSkillKonselor($dataSkill);
 	}
 
@@ -239,4 +247,12 @@ class KonselingController extends CI_Controller {
 		$this->load->view('home_konseling/partials/footer.php');
 		$this->load->view('home_konseling/partials/js.php');
 	}
+
+	public function pilih_konselor(){
+        $this->load->view('home_konseling/partials/head.php');
+		$this->load->view('home_konseling/partials/header.php');
+		$this->load->view('home_konseling/v_pilih_konselor.php');
+		$this->load->view('home_konseling/partials/footer.php');
+		$this->load->view('home_konseling/partials/js.php');
+    }
 }
