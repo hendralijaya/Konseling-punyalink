@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="<?php echo base_url()?>asset/node_modules/bootstrap-daterangepicker/daterangepicker.css">
     <link rel="stylesheet" href="<?php echo base_url()?>asset/node_modules/selectric/public/selectric.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets_home_konseling/css/multi-form.css?v2" />
+    <link rel="stylesheet" href="<?php echo base_url()?>assets_home_konseling/css/slicknav.css">
     <link rel="stylesheet" href="https://www.jqueryscript.net/css/jquerysctipttop.css" />
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">

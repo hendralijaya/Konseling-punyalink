@@ -221,7 +221,7 @@ class KonselingController extends CI_Controller {
 		$this->load->model('Konseling_model');
 		$idKonselor = $this->session->userdata('idKonselor');
 
-		// $kategori = $this->Konseling_model->getKategori_id(array($this->input->post('subkategori_id')));
+		// $kategori = $this->Konseling_model->getKategori_i($this->input->post('subkategori_id'));
 		// $kategori_id = array($kategori['kategori_test_dasar_konselor_id']);
 		// var_dump($kategori);
 		// die();
@@ -255,4 +255,21 @@ class KonselingController extends CI_Controller {
 		$this->load->view('home_konseling/partials/footer.php');
 		$this->load->view('home_konseling/partials/js.php');
     }
+
+	public function tos(){
+        $this->load->view('home_konseling/partials/head.php');
+		$this->load->view('home_konseling/partials/header.php');
+		$this->load->view('home_konseling/v_tos.php');
+		$this->load->view('home_konseling/partials/footer.php');
+		$this->load->view('home_konseling/partials/js.php');
+    }
+
+	public function storePilihKategori(){
+		$data=[
+			'chat' => $this->input->post('chat'),
+			'call' => $this->input->post('call')
+		];
+		var_dump($data);
+		die();
+	}
 }

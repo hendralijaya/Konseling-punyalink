@@ -6,7 +6,7 @@
                     <div class="row align-items-center">
                         <div class="col-lg-3">
                             <div class="logo">
-                                <a href="#">
+                                <a href="<?php echo base_url('KonselingController') ?>">
                                     <img src="<?php echo base_url()?>assets_home_konseling/img/Logo_Punya_Link_Green 2.png" width="180" alt="">
                                 </a>
                             </div>
@@ -19,19 +19,29 @@
                                         <li><a href="#">Growing</a></li>
                                         <li><a href="#">Sharing</a>
                                             <ul class="submenu">
-                                                <li><a href="#" class="dropdown-item has-icon text-primary">
+                                                <li><a href="#" class="dropdown-item has-icon">
                                                     Joobseker
                                                 </a></li>
-                                                <li><a href="#" class="dropdown-item has-icon text-primary">
+                                                <li><a href="#" class="dropdown-item has-icon">
                                                     Employer
                                                 </a></li>
-                                                <li><a href="#" class="dropdown-item has-icon text-primary">
+                                                <li><a href="#" class="dropdown-item has-icon">
                                                     Konselor
                                                 </a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="#">Blog</a>
-                                        <li><div class="box__pl"></div></li>
+                                        <li><a href="#" id="coba">Blog</a></li>
+                                        <li><a href="#">Masuk</a>
+                                            <ul class="submenu">
+                                                <li><a href="#" class="dropdown-item has-icon">
+                                                    Konselor
+                                                </a></li>
+                                                <li><a href="#" class="dropdown-item has-icon">
+                                                    Konseling
+                                                </a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Daftar</a></li>
                                     </ul>
                                 </nav>
                             </div>
