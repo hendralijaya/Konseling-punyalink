@@ -249,11 +249,15 @@ class KonselingController extends CI_Controller {
 	}
 
 	public function pilih_konselor(){
+			// load view
+			$data['kategori_konseling'] = $this->Konseling_model->getAllKategori();
+		// Yang ini nanti di viewnya nanti getLayananKonselingByCategoryId
         $this->load->view('home_konseling/partials/head.php');
 		$this->load->view('home_konseling/partials/header.php');
-		$this->load->view('home_konseling/v_pilih_konselor.php');
+		$this->load->view('home_konseling/v_pilih_konselor.php',$data);
 		$this->load->view('home_konseling/partials/footer.php');
 		$this->load->view('home_konseling/partials/js.php');
+
     }
 
 	public function tos(){
@@ -265,11 +269,30 @@ class KonselingController extends CI_Controller {
     }
 
 	public function storePilihKategori(){
-		$data=[
-			'chat' => $this->input->post('chat'),
-			'call' => $this->input->post('call')
-		];
-		var_dump($data);
-		die();
+		for($total = 0; $total < count($this->input->post('chat')); $total++){
+			$data[$total] = [
+				'kategori_konseling_id' => $this->input->post('chat_id'),
+				'materi_id' => $this->input->post('chat')[$total],
+				'konselor_id' => $this->session->userdata('idKonselor')
+			];
+		};
+		// total dh 3
+		for($index = 0; $index < count($this->input->post('call')); $index++){
+			$data[$index+$total] = [
+				'kategori_konseling_id' => $this->input->post('call_id'),
+				'materi_id' => $this->input->post('call')[$index],
+				'konselor_id' => $this->session->userdata('idKonselor')
+			];
+		};
+		$total = $index + $total;
+		for($index = 0; $index < count($this->input->post('vc')); $index++){
+			$data[$index+$total] = [
+				'kategori_konseling_id' => $this->input->post('vc_id'),
+				'materi_id' => $this->input->post('vc')[$index],
+				'konselor_id' => $this->session->userdata('idKonselor')
+			];
+		};
+		$this->Konseling_model->storeBatchMateriKonseling($data);
+		// redirect ke berikutnya
 	}
 }

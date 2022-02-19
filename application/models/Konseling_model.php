@@ -93,4 +93,10 @@ class Konseling_model extends CI_Model
         $this->db->select('kategori_test_dasar_konselor_id')->from('subkategori_test_dasar_konselor')->where('id', $id);
         return $this->db->get()->result_array();
     }
+    // Materi Konselor
+    public function storeBatchMateriKonseling($data)
+    {
+        $this->db->insert_batch('materi_konseling',$data);
+    }
+    
 }
