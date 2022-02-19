@@ -219,7 +219,7 @@ class KonselingController extends CI_Controller {
 	public function storeSkillKonselor()
 	{
 		$this->load->model('Konseling_model');
-		$idKonselor = $this->session->userdata('idKonselor');
+		$idKonselor = $this->session->userdata('konselor_id');
 
 		// $kategori = $this->Konseling_model->getKategori_i($this->input->post('subkategori_id'));
 		// $kategori_id = array($kategori['kategori_test_dasar_konselor_id']);
@@ -268,12 +268,22 @@ class KonselingController extends CI_Controller {
 		$this->load->view('home_konseling/partials/js.php');
     }
 
+	public function storeTOS()
+	{
+		$tos = $this->input->post('tos');
+		$idKonselor = $this->session->userdata('konselor_id');
+		$data = array(
+			'TOS' => $tos,
+		);
+		$this->konseling_model->updateTOSKonselor($idKonselor,$data);
+	}
+
 	public function storePilihKategori(){
 		for($total = 0; $total < count($this->input->post('chat')); $total++){
 			$data[$total] = [
 				'kategori_konseling_id' => $this->input->post('chat_id'),
 				'materi_id' => $this->input->post('chat')[$total],
-				'konselor_id' => $this->session->userdata('idKonselor')
+				'konselor_id' => $this->session->userdata('konselor_id')
 			];
 		};
 		// total dh 3
@@ -281,7 +291,7 @@ class KonselingController extends CI_Controller {
 			$data[$index+$total] = [
 				'kategori_konseling_id' => $this->input->post('call_id'),
 				'materi_id' => $this->input->post('call')[$index],
-				'konselor_id' => $this->session->userdata('idKonselor')
+				'konselor_id' => $this->session->userdata('konselor_id')
 			];
 		};
 		$total = $index + $total;
@@ -289,7 +299,7 @@ class KonselingController extends CI_Controller {
 			$data[$index+$total] = [
 				'kategori_konseling_id' => $this->input->post('vc_id'),
 				'materi_id' => $this->input->post('vc')[$index],
-				'konselor_id' => $this->session->userdata('idKonselor')
+				'konselor_id' => $this->session->userdata('konselor_id')
 			];
 		};
 		$this->Konseling_model->storeBatchMateriKonseling($data);

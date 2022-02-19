@@ -98,5 +98,11 @@ class Konseling_model extends CI_Model
     {
         $this->db->insert_batch('materi_konseling',$data);
     }
-    
+
+    public function updateTOSKonselor($konselor_id,$data)
+    {
+        $this->db->where('id',$konselor_id);
+        $this->db->update('konselor',$data);
+    }
+
 }
