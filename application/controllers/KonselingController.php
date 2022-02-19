@@ -134,7 +134,7 @@ class KonselingController extends CI_Controller {
 			$CV = uploadFile('cv','./uploads/konselor/','pdf',false);
 			$skck = uploadFile('skck','./uploads/konselor/','pdf',false);
 			$npwp = uploadFile('npwp','./uploads/konselor/','pdf',false);
-			$this->load->model('konseling_model');
+			$this->load->model('Konseling_model');
 			$data = [
 				'foto_pas' => $fotoPas,
 				'foto_ktp' => $fotoKtp,
