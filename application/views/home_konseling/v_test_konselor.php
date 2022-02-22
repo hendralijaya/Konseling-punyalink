@@ -18,7 +18,6 @@
                             <div class="panel-body" style="display: none;">
                             <?php foreach ($coba as $data_1) :?>
                                 <input type="checkbox" name="subkategori_id[]" value="<?php echo $data_1['id']?>" multiple>
-                                <!-- <input type="hidden" name="kategori_id" value="<?php echo $data_1['kategori_test_dasar_konselor_id'] ?>"> -->
                                 <label for=""><?php echo $data_1['nama'] ?></label><br>
                             <?php endforeach; ?>
                             </div>

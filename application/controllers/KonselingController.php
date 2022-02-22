@@ -220,17 +220,13 @@ class KonselingController extends CI_Controller {
 	{
 		$this->load->model('Konseling_model');
 		$idKonselor = $this->session->userdata('konselor_id');
-
-		// $kategori = $this->Konseling_model->getKategori_i($this->input->post('subkategori_id'));
-		// $kategori_id = array($kategori['kategori_test_dasar_konselor_id']);
-		// var_dump($kategori);
-		// die();
-		$dataSkill = [
-			'konselor_id' => $idKonselor,
-			'kategori_id' => $this->input->post('kategori_id'),
-			'subkategori_id' => $this->input->post('subkategori_id'),
-		];
-		$this->Konseling_model->storeSkillKonselor($dataSkill);
+		$data = array();
+		if ($this->input->post()) {
+			$data['id']=$this->input->post('id',true);
+			$data['subkategori_id']=$this->input->post('subkategori_id',true);
+	
+			$this->Konseling_model->storeSkillKonselor($data);
+		}
 	}
 
 	public function deleteSkillKonselor()
@@ -271,6 +267,7 @@ class KonselingController extends CI_Controller {
 	public function storeTOS()
 	{
 		$tos = $this->input->post('tos');
+		// $tos = '1'
 		$idKonselor = $this->session->userdata('konselor_id');
 		$data = array(
 			'TOS' => $tos,
@@ -319,6 +316,11 @@ class KonselingController extends CI_Controller {
 		$this->form_validation->set_rules('keluhan','Keluhan','required');
 		if($this->form_validation->run() == FALSE) {
 			// load view
+			$this->load->view('home_konseling/partials/head.php');
+			$this->load->view('home_konseling/partials/header.php');
+			$this->load->view('home_konseling/v_daftar_konseling.php');
+			$this->load->view('home_konseling/partials/footer.php');
+			$this->load->view('home_konseling/partials/js.php');
 		}else {
 			$dataClientKonseling = [
 				'nama' => $this->input->post('nama',TRUE),

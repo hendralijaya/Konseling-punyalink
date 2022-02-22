@@ -73,10 +73,29 @@ class Konseling_model extends CI_Model
         $this->db->select('*')->from('subkategori_test_dasar_konselor')->where('kategori_test_dasar_konselor_id', $id);
         return $this->db->get()->result_array();
     }
-    public function storeSkillKonselor($data)
+    // public function storeSkillKonselor($data)
+    // {
+    //     $this->db->insert('skill_konselor',$data);
+    // }
+
+    public function getKategori_id($id)
     {
-        $this->db->insert('skill_konselor',$data);
+        $this->db->select('kategori_test_dasar_konselor_id')->from('subkategori_test_dasar_konselor')->where('id', $id);
+        return $this->db->get()->result_array();
     }
+
+    public function storeSkillKonselor($data){
+		if (isset($data['subkategori_id']) && is_array($data['subkategori_id'])):
+			foreach($data['subkategori_id'] as $key=>$value):
+				$this->db->insert('skill_konselor', array(
+					'id'=>$data['id'],
+					'subkategori_id'=>$data['subkategori_id'][$key],
+                    'kategori_id'=>$this->Konseling_model->getKategori_id($data['subkategori_id'][$key])[0]['kategori_test_dasar_konselor_id'],
+				));
+			endforeach;
+		endif;
+	}
+    
     public function deleteSkillKonselorById($id)
     {
         $this->db->where('subkategori_id', $id);
@@ -88,11 +107,6 @@ class Konseling_model extends CI_Model
         $this->db->insert('dokumen_konselor',$data);
     }
 
-    public function getKategori_id($id)
-    {
-        $this->db->select('kategori_test_dasar_konselor_id')->from('subkategori_test_dasar_konselor')->where('id', $id);
-        return $this->db->get()->result_array();
-    }
     // Materi Konselor
     public function storeBatchMateriKonseling($data)
     {

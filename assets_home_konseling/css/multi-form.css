@@ -14,7 +14,7 @@
 /* body {
 	background-color: #fff;
 } */
-#daftar_konselor .label {
+#daftar_konselor .label_dftr {
 	font-weight: 500;
 	font-size: 18px;
 	line-height: 27px;
@@ -23,7 +23,7 @@
 	margin-bottom: 12px;
 }
 
-#daftar_konselor .label span {
+#daftar_konselor .label_dftr span {
 	font-size: 12px;
 	line-height: 150%;
 }

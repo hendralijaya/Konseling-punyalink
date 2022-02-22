@@ -9,12 +9,12 @@
                         <label class="label_kategori" for="">Chat</label>
                     </div>
                     <div class="col-md-9">
-                        <select class="js-select2" name="chat[]" multiple="multiple" required>
-                            <option value="Psikologi" data-badge="">Psikologi</option>
-                            <option value="Hipnoterapis" data-badge="">Hipnoterapis</option>
-                            <option value="Healing" data-badge="">Healing</option>
+                        <input type="hidden" name="chat_id" value="<?php echo $kategori_konseling[0]['id']?>">
+                        <select class="js-select2" name="chat[]" multiple="multiple">
+                            <option value="1" data-badge="">Psikologi</option>
+                            <option value="2" data-badge="">Hipnoterapis</option>
+                            <option value="3" data-badge="">Healing</option>
                         </select>
-                        <input type="hidden" name="id_chat">
                     </div>
                 </div>
                 <div class="row align-items-center mb-5">
@@ -22,12 +22,12 @@
                         <label class="label_kategori" for="">Call</label>
                     </div>
                     <div class="col-md-9">
+                        <input type="hidden" name="call_id" value="<?php echo $kategori_konseling[1]['id']?>">
                         <select class="js-select2" name="call[]" multiple="multiple">
-                            <option value="Psikologi" data-badge="">Psikologi</option>
-                            <option value="Hipnoterapis" data-badge="">Hipnoterapis</option>
-                            <option value="Healing" data-badge="">Healing</option>
+                            <option value="1" data-badge="">Psikologi</option>
+                            <option value="2" data-badge="">Hipnoterapis</option>
+                            <option value="3" data-badge="">Healing</option>
                         </select>
-                        <input type="hidden" name="id_call">
                     </div>
                 </div>
                 <div class="row align-items-center mb-5">
@@ -35,12 +35,12 @@
                         <label class="label_kategori" for="">Video Call</label>
                     </div>
                     <div class="col-md-9">
+                        <input type="hidden" name="vc_id" value="<?php echo $kategori_konseling[2]['id']?>">
                         <select class="js-select2" name="vc[]" multiple="multiple">
-                            <option value="Psikologi" data-badge="">Psikologi</option>
-                            <option value="Hipnoterapis" data-badge="">Hipnoterapis</option>
-                            <option value="Healing" data-badge="">Healing</option>
+                            <option value="1" data-badge="">Psikologi</option>
+                            <option value="2" data-badge="">Hipnoterapis</option>
+                            <option value="3" data-badge="">Healing</option>
                         </select>
-                        <input type="hidden" name="id_vc">
                     </div>
                 </div>
                 <div style="overflow: auto">

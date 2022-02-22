@@ -24,8 +24,9 @@
                 <input type="checkbox" id="agree2" onchange="checkedFunc('agree1', 'agree2')"> 
                 <label class="list_tos" for="">I agree with Fore &nbsp;<a href="#">Privacy Policy</a></label>
             </div>
-            
-            <input type="button" value="I agree with terms" disabled id="acceptbtn" />
+            <form action="<?= site_url('KonselingController/storeTOS') ?>" method="POST">
+                <input type="submit" name="" value="I agree with terms" disabled id="acceptbtn" />
+            </form>
             <!-- <button type="submit" class="btn_next">Not right now..</button>
             <button type="submit" id="btn_agree" class="btn_next">I agree with terms</button> -->
         </div>

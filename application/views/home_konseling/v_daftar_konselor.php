@@ -22,19 +22,19 @@
                 <div class="tab">
                     <div class="row">
                         <div class="form-group col-md-6">
-                            <label class="label">Nama</label>
+                            <label class="label_dftr">Nama</label>
                             <input id="nama" type="text" name="nama" class="form-control" required></input>
                         </div>
                         <div class="form-group col-md-6">
-                            <label class="label">Email</label>
+                            <label class="label_dftr">Email</label>
                             <input id="email" type="email" name="email" class="form-control" required></input>
                         </div>
                         <div class="form-group col-md-6">
-                            <label class="label">Tanggal Lahir</label>
+                            <label class="label_dftr">Tanggal Lahir</label>
                             <input id="tanggal_lahir" name="tanggal_lahir" class="form-control datepickerr" placeholder="Check In"  required></input>
                         </div>
                         <div class="form-group col-md-6">
-                            <label class="label">Jenis Kelamin</label>
+                            <label class="label_dftr">Jenis Kelamin</label>
                             <select id="jenis_kelamin" name="jenis_kelamin" class="form-control selectric" required>
                                 <option value=""><?php echo "Pilih Jenis Kelamin" ?></option>
                                 <option value="Pria">
@@ -44,15 +44,15 @@
                             </select>
                         </div>
                         <div class="form-group col-md-6">
-                            <label class="label">No. Handphone</label>
+                            <label class="label_dftr">No. Handphone</label>
                             <input id="no_hp" type="number" name="no_hp" class="form-control" value="" required></input>
                         </div>
                         <div class="form-group col-md-6">
-                            <label class="label">No. KTP</label>
+                            <label class="label_dftr">No. KTP</label>
                             <input id="no_ktp" type="number" name="no_ktp" class="form-control" value="" required></input>
                         </div>
                         <div class="form-group col-md-6">
-                            <label class="label">Provinsi</label>
+                            <label class="label_dftr">Provinsi</label>
                             <select id="provinsi" name="provinsi" class="form-control selectric" required>
                                 <option value=""><?php echo "Pilih Provinsi"; ?></option>
                                 <?php foreach ($provinsi as $item) : ?>
@@ -61,7 +61,7 @@
                             </select>
                         </div>
                         <div class="form-group col-md-6">
-                            <label class="label">Kab/Kota</label>
+                            <label class="label_dftr">Kab/Kota</label>
                             <select id="kabupaten_kota" name="kabupaten_kota" class="form-control selectric kabupaten_kota" required>
                                 <option value="0"><?php echo "Pilih Kab/Kota" ?></option>
                                 <?php foreach ($kabupaten as $item) : ?>
@@ -70,7 +70,7 @@
                             </select>
                         </div>
                         <div class="form-group col-12">
-                            <label class="label">Alamat</label>
+                            <label class="label_dftr">Alamat</label>
                             <textarea id="alamat" name="alamat" class="form-control" required></textarea>
                         </div>
                     </div>
@@ -78,59 +78,59 @@
                 <div class="tab">
                     <div class="row">
                         <div class="form-group col-md-6">
-                            <label class="label">Gelar Pendidikan S1</label>
+                            <label class="label_dftr">Gelar Pendidikan S1</label>
                             <input id="gelar_S1" type="text" name="gelar_S1" class="form-control" required></input>
                         </div>
                         <div class="form-group col-md-6">
-                            <label class="label">Universitas</label>
+                            <label class="label_dftr">Universitas</label>
                             <input id="universitas_S1" type="text" name="universitas_S1" class="form-control" required></input>
                         </div>
                         <div class="form-group col-md-6">
-                            <label class="label">Jurusan</label>
+                            <label class="label_dftr">Jurusan</label>
                             <input id="jurusan_S1" type="text" name="jurusan_S1" class="form-control" required></input>
                         </div>
                         <div class="form-group col-md-6">
-                            <label class="label">Angkatan</label>
+                            <label class="label_dftr">Angkatan</label>
                             <input id="angkatan_S1" type="email" name="angkatan_S1" class="form-control" required></input>
                         </div>
                         <div class="form-group col-md-6">
-                            <label class="label">Dari</label>
+                            <label class="label_dftr">Dari</label>
                             <input id="dari_S1" type="text" name="dari_S1" class="form-control datepickerr" required></input>
                         </div>
                         <div class="form-group col-md-6">
-                            <label class="label">Sampai</label>
+                            <label class="label_dftr">Sampai</label>
                             <input id="sampai_S1" type="text" name="sampai_S1" class="form-control datepickerr" required></input>
                         </div>
                         <div class="form-group col-md-6">
-                            <label class="label">Gelar Pendidikan S2<span>&nbsp;(bisa dikosongkan bila belum ada)</span></label>
+                            <label class="label_dftr">Gelar Pendidikan S2<span>&nbsp;(bisa dikosongkan bila belum ada)</span></label>
                             <input id="gelar_S2" type="text" name="gelar_S2" class="form-control"></input>
                         </div>
                         <div class="form-group col-md-6">
-                            <label class="label">Universitas</label>
+                            <label class="label_dftr">Universitas</label>
                             <input id="universitas_S2" type="text" name="universitas_S2" class="form-control"></input>
                         </div>
                         <div class="form-group col-md-6">
-                            <label class="label">Jurusan</label>
+                            <label class="label_dftr">Jurusan</label>
                             <input id="jurusan_S2" type="text" name="jurusan_S2" class="form-control"></input>
                         </div>
                         <div class="form-group col-md-6">
-                            <label class="label">Angkatan</label>
+                            <label class="label_dftr">Angkatan</label>
                             <input id="angkatan_S2" type="email" name="angkatan_S2" class="form-control"></input>
                         </div>
                         <div class="form-group col-md-6">
-                            <label class="label">Dari</label>
+                            <label class="label_dftr">Dari</label>
                             <input id="dari_S2" type="text" name="dari_S2" class="form-control datepickerr"></input>
                         </div>
                         <div class="form-group col-md-6">
-                            <label class="label">Sampai</label>
+                            <label class="label_dftr">Sampai</label>
                             <input id="sampai_S2" type="text" name="sampai_S2" class="form-control datepickerr"></input>
                         </div>
                         <div class="form-group col-md-6">
-                            <label class="label">Pekerjaan Saat ini</label>
+                            <label class="label_dftr">Pekerjaan Saat ini</label>
                             <input id="pekerjaan" type="text" name="pekerjaan" class="form-control"></input>
                         </div>
                         <div class="form-group col-md-6">
-                            <label class="label">Organisasi</label>
+                            <label class="label_dftr">Organisasi</label>
                             <input id="organisasi" type="text" name="organisasi" class="form-control"></input>
                         </div>
                     </div>
@@ -138,19 +138,19 @@
                 <div class="tab">
                     <div class="row">
                         <div class="form-group col-md-6">
-                            <label class="label">Nama Bank</label>
+                            <label class="label_dftr">Nama Bank</label>
                             <input id="nama_bank" type="text" name="nama_bank" class="form-control" required></input>
                         </div>
                         <div class="form-group col-md-6">
-                            <label class="label">Alamat Cabang Bank</label>
+                            <label class="label_dftr">Alamat Cabang Bank</label>
                             <input id="alamat_cabang" type="text" name="alamat_cabang" class="form-control" required></input>
                         </div>
                         <div class="form-group col-md-6">
-                            <label class="label">Nomor Rekening</label>
+                            <label class="label_dftr">Nomor Rekening</label>
                             <input id="nomor_rekening" type="number" name="nomor_rekening" class="form-control" required></input>
                         </div>
                         <div class="form-group col-md-6">
-                            <label class="label">Nama Pemilik Rekening</label>
+                            <label class="label_dftr">Nama Pemilik Rekening</label>
                             <input id="nama_rekening" type="text" name="nama_rekening" class="form-control" required></input>
                         </div>
                     </div>

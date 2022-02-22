@@ -8,11 +8,21 @@
 }
 
 /* ========================= GLOBAL ============================= */
+input:focus {
+	border: 1px solid var(--green) !important;
+	box-shadow: none !important;
+}
+
+textarea:focus {
+	border: 1px solid var(--green) !important;
+	box-shadow: none !important;
+}
+
 h2 {
 	font-family: var(--font_family);
-	font-weight: 500 !important;
-	font-size: 34px !important;
-	line-height: 150% !important;
+	font-weight: 500;
+	font-size: 34px;
+	line-height: 150%;
 	letter-spacing: -0.02em;
 	color: var(--font);
 }
@@ -1198,10 +1208,83 @@ label.list_tos a {
 	color: #fff !important;
 	background: var(--green) !important;
 	border: none;
+	padding: 10px 15px;
+	border-radius: 8px;
+}
+
+#acceptbtn:hover:not([disabled]) {
+	opacity: 0.8;
 }
 
 #acceptbtn[disabled] {
 	color: #fff !important;
 	background: var(--green) !important;
 	opacity: 0.6;
+	padding: 10px 15px;
+	border-radius: 8px;
+	border: none;
+}
+
+/* input[type="checkbox"]:checked:after {
+	background-color: #23ac39;
+} */
+
+/* ============================= DAFTAR KONSELING ================================== */
+
+#daftar_konseling .list_ctgr {
+	color: var(--font);
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 36px;
+	margin-top: 0;
+	margin-bottom: 24px;
+	font-family: var(--font_family);
+}
+
+#daftar_konseling .descr {
+	color: var(--font);
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 21px;
+	margin-bottom: 12px;
+	font-family: var(--font_family);
+}
+
+#daftar_konseling ol {
+	padding: 0 0 0 15px;
+}
+
+#daftar_konseling ol li {
+	font-weight: 500;
+	font-size: 14px;
+	color: #878787;
+	line-height: 21px;
+	margin-bottom: 12px;
+	font-family: var(--font_family);
+}
+
+#daftar_konseling .label__k {
+	font-size: 18px;
+	line-height: 27px;
+	font-weight: 500;
+	font-family: var(--font_family);
+	color: var(--font);
+}
+
+#daftar_konseling input {
+	height: 45px;
+	border-radius: 12px;
+	border: 1px solid #d7d7d7;
+}
+
+#daftar_konseling .form-control {
+	margin-bottom: 30px;
+}
+
+.btn_not {
+	border-radius: 8px;
+	padding: 8px 12px;
+	background-color: #fff;
+	display: inline-block;
+	width: max-content;
 }
