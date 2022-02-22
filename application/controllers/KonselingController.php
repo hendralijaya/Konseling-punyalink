@@ -305,4 +305,39 @@ class KonselingController extends CI_Controller {
 		$this->Konseling_model->storeBatchMateriKonseling($data);
 		// redirect ke berikutnya
 	}
+
+	// Client Konseling
+	public function daftarKonseling()
+	{
+		$this->form_validation->set_rules('nama', 'Nama', 'required');
+		$this->form_validation->set_rules('email', 'Email', 'required|valid_email|trim');
+		$this->form_validation->set_rules('no_wa','Nomor WA','required|numeric');
+		$this->form_validation->set_rules('jenis_kelamin','Jenis Kelamin','required');
+		$this->form_validation->set_rules('usia','Usia','required|numeric');
+		$this->form_validation->set_rules('domisili','Domisili','required');
+		$this->form_validation->set_rules('pendidikan_terakhir','Pendidikan Terakhir','required');
+		$this->form_validation->set_rules('keluhan','Keluhan','required');
+		if($this->form_validation->run() == FALSE) {
+			// load view
+		}else {
+			$dataClientKonseling = [
+				'nama' => $this->input->post('nama',TRUE),
+				'email' => $this->input->post('email',TRUE),
+				'no_wa' => $this->input->post('no_wa',TRUE),
+				'jenis_kelamin' => $this->input->post('jenis_kelamin',TRUE),
+				'usia' => $this->input->post('usia',TRUE),
+				'domisili' => $this->input->post('domisili'),
+				'pendidikan_terakhir' => $this->input->post('pendidikan_terakhir',TRUE),
+				'keluhan' => $this->input->post('keluhan',TRUE),
+				'jadwal_konseling_id' => $this->session->userdata('jadwal_konseling_id'),
+			];
+			date_default_timezone_set('Asia/Jakarta');
+			$dataOrderKonseling = [
+				'order_date' => date('Y/m/d H:i:s', time()),
+				'batas_akhir_pembayaran' => date('Y/m/d H:i:s', time() + (60*60*24))
+			];
+			$this->konseling_model->storeClientKonseling($dataClientKonseling);
+			$this->konseling_model->storeOrderKonseling($dataOrderKonseling);
+		}
+	}
 }

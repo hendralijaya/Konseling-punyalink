@@ -105,4 +105,10 @@ class Konseling_model extends CI_Model
         $this->db->update('konselor',$data);
     }
 
+    // CLIENT KONSELING
+    public function storeOrderKonseling($data)
+    {
+        $this->db->insert('order_konseling',$data);
+    }
+
 }
