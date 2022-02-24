@@ -5,9 +5,9 @@
                 <img src="./assets_home_konseling/img/Group.png" alt="konseling">
             </div>
             <div class="col-lg-7">
-                <h1>Konsultasi bersama kami,<br>
+                <h1 class="head1">Konsultasi bersama kami,<br>
                 dan dapatkan konseling gratis</h1>
-                <p>Konsultasi masalah anda, dan dapatkan test psikologi melalui fitur yang ada di PunyaLink, serta dapatkan konseling gratis hingga jadwal yang dapat disesuaikan dengan anda.</p>
+                <p class="de__1">Konsultasi masalah anda, dan dapatkan test psikologi melalui fitur yang ada di PunyaLink, serta dapatkan konseling gratis hingga jadwal yang dapat disesuaikan dengan anda.</p>
                 <a href="#" class="btn_k">
                     <span>Masuk Sebagai Konseling &nbsp; </span>
                     <ion-icon name="chevron-forward-outline"></ion-icon>
@@ -24,9 +24,9 @@
                 <img src="./assets_home_konseling/img/Grouplklklk.png" alt="kategori">
             </div>
             <div class="col-lg-7 order-lg-first">
-                <h2>Konseling PunyaLink</h2>
-                <p style="margin-top: 24px;">Mari, temukan langkah baik dan solusi untuk masalah psikologis kamu. Temukan hal baik bersama kami, PunyaLink.</p>
-                <p style="margin-top: 48px;">Pilih kategori paket konseling anda</p>
+                <h2 class="ktgr_head">Konseling PunyaLink</h2>
+                <p class="lst_ktgr" style="margin-top: 24px;">Mari, temukan langkah baik dan solusi untuk masalah psikologis kamu. Temukan hal baik bersama kami, PunyaLink.</p>
+                <p class="lst_ktgr" style="margin-top: 48px;">Pilih kategori paket konseling anda</p>
                 
                 <ul id="list_kategori">
                     <?php foreach ($kategori_layanan_konseling as $data) :?>
@@ -42,23 +42,23 @@
                     <p class="txt">Layanan konseling psikologi, PunyaLink siap mendengarkan semua cerita mu disini</p>
                     <div class="checklist">
                         <img src="./assets_home_konseling/img//Verifikasi Icon.png" alt="">
-                        <p>Lebih hemat 20.000/sesi</p>
+                        <p class="lst__txt">Lebih hemat 20.000/sesi</p>
                     </div>
                     <div class="checklist">
                         <img src="./assets_home_konseling/img//Verifikasi Icon.png" alt="">
-                        <p>Dapat atur jam</p>
+                        <p class="lst__txt">Dapat atur jam</p>
                     </div>
                     <div class="checklist">
                         <img src="./assets_home_konseling/img//Verifikasi Icon.png" alt="">
-                        <p>Akses lebih mudah</p>
+                        <p class="lst__txt">Akses lebih mudah</p>
                     </div>
                     <div class="checklist">
                         <img src="./assets_home_konseling/img//Verifikasi Icon.png" alt="">
-                        <p>Psikiater 24 jam</p>
+                        <p class="lst__txt">Psikiater 24 jam</p>
                     </div>
                     <div class="checklist">
                         <img src="./assets_home_konseling/img//Verifikasi Icon.png" alt="">
-                        <p>Garansi uang kembali</p>
+                        <p class="lst__txt">Garansi uang kembali</p>
                     </div>
                     <hr>
                     <div class="price">
@@ -74,23 +74,23 @@
                     <p class="txt">Layanan Hipnoterapis yang ada pada PunyaLink, kini hadir untuk membantu proses penyembuhan</p>
                     <div class="checklist">
                         <img src="./assets_home_konseling/img//Verifikasi Icon.png" alt="">
-                        <p>Lebih hemat 30.000/sesi</p>
+                        <p class="lst__txt">Lebih hemat 30.000/sesi</p>
                     </div>
                     <div class="checklist">
                         <img src="./assets_home_konseling/img//Verifikasi Icon.png" alt="">
-                        <p>Dapat atur jam</p>
+                        <p class="lst__txt">Dapat atur jam</p>
                     </div>
                     <div class="checklist">
                         <img src="./assets_home_konseling/img//Verifikasi Icon.png" alt="">
-                        <p>Akses lebih mudah</p>
+                        <p class="lst__txt">Akses lebih mudah</p>
                     </div>
                     <div class="checklist">
                         <img src="./assets_home_konseling/img//Verifikasi Icon.png" alt="">
-                        <p>Psikiater 24 jam</p>
+                        <p class="lst__txt">Psikiater 24 jam</p>
                     </div>
                     <div class="checklist">
                         <img src="./assets_home_konseling/img//Verifikasi Icon.png" alt="">
-                        <p>Garansi uang kembali</p>
+                        <p class="lst__txt">Garansi uang kembali</p>
                     </div>
                     <hr>
                     <div class="price">
@@ -106,23 +106,23 @@
                     <p class="txt">Layanan Healing, PunyaLink berupaya untuk penyembuhan luka dari dalam diri dengan proses yang Efektif</p>
                     <div class="checklist">
                         <img src="./assets_home_konseling/img//Verifikasi Icon.png" alt="">
-                        <p>Lebih hemat 25.000/sesi</p>
+                        <p class="lst__txt">Lebih hemat 25.000/sesi</p>
                     </div>
                     <div class="checklist">
                         <img src="./assets_home_konseling/img//Verifikasi Icon.png" alt="">
-                        <p>Dapat atur jam</p>
+                        <p class="lst__txt">Dapat atur jam</p>
                     </div>
                     <div class="checklist">
                         <img src="./assets_home_konseling/img//Verifikasi Icon.png" alt="">
-                        <p>Akses lebih mudah</p>
+                        <p class="lst__txt">Akses lebih mudah</p>
                     </div>
                     <div class="checklist">
                         <img src="./assets_home_konseling/img//Verifikasi Icon.png" alt="">
-                        <p>Konsultasi 24 jam</p>
+                        <p class="lst__txt">Konsultasi 24 jam</p>
                     </div>
                     <div class="checklist">
                         <img src="./assets_home_konseling/img//Verifikasi Icon.png" alt="">
-                        <p>Garansi uang kembali</p>
+                        <p class="lst__txt">Garansi uang kembali</p>
                     </div> 
                     <hr>
                     <div class="price">
@@ -138,23 +138,23 @@
                     <p class="txt">Memfokuskan pikiran untuk layanan Meditasi, PunyaLink siap membantu proses meditasi dengan baik</p>
                     <div class="checklist">
                         <img src="./assets_home_konseling/img//Verifikasi Icon.png" alt="">
-                        <p>Lebih hemat 15.000/sesi</p>
+                        <p class="lst__txt">Lebih hemat 15.000/sesi</p>
                     </div>
                     <div class="checklist">
                         <img src="./assets_home_konseling/img//Verifikasi Icon.png" alt="">
-                        <p>Dapat atur jam</p>
+                        <p class="lst__txt">Dapat atur jam</p>
                     </div>
                     <div class="checklist">
                         <img src="./assets_home_konseling/img//Verifikasi Icon.png" alt="">
-                        <p>Akses lebih mudah</p>
+                        <p class="lst__txt">Akses lebih mudah</p>
                     </div>
                     <div class="checklist">
                         <img src="./assets_home_konseling/img//Verifikasi Icon.png" alt="">
-                        <p>Layanan Pembimbing</p>
+                        <p class="lst__txt">Layanan Pembimbing</p>
                     </div>
                     <div class="checklist">
                         <img src="./assets_home_konseling/img//Verifikasi Icon.png" alt="">
-                        <p>Garansi uang kembali</p>
+                        <p class="lst__txt">Garansi uang kembali</p>
                     </div>
                     <hr>
                     <div class="price">
@@ -175,8 +175,8 @@
                 <img src="./assets_home_konseling/img/Groupplplp.png" alt="deep">
             </div>
             <div class="col-md-6">
-                <h2>Konseling Sekarang, dapatkan gratis konsultasi</h2>
-                <p class="mt-4">Tingkatkan kesehatan mental anda, bersama PunyaLink dan dapatkan konseling privat yang terbaik, kapan saja, dan dimana saja.</p>
+                <h2 class="health_head">Konseling Sekarang, dapatkan gratis konsultasi</h2>
+                <p class="mt-4 descr_h">Tingkatkan kesehatan mental anda, bersama PunyaLink dan dapatkan konseling privat yang terbaik, kapan saja, dan dimana saja.</p>
             </div>
         </div>
     </div>
@@ -232,7 +232,7 @@
 <section id="konselor">
     <div class="container">
         <div class="tb text-center px-lg-5">
-            <h2>Ingin menjadi konselor? segera daftarkan diri anda. dan temukan hal baik bersama kami, PunyaLink </h2>
+            <h2 class="konselor_head">Ingin menjadi konselor? segera daftarkan diri anda. dan temukan hal baik bersama kami, PunyaLink </h2>
             <a href="<?php echo base_url('konseling-controller/konselor'); ?>" class="btn_k">
                 <span>Masuk Sebagai Konselor &nbsp; </span>
                 <ion-icon name="chevron-forward-outline"></ion-icon>
