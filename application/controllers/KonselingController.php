@@ -237,11 +237,19 @@ class KonselingController extends CI_Controller {
 	}
 
 	public function verifikasi(){
+		$idKonselor = $this->session->userdata('konselor_id');
+		$konselor = $this->konseling_model->getKonselorById($idKonselor);
+		$body = [
+			'email' => $konselor['email'],
+			'subject' => 'Selamat anda telah menjadi Konselor di Punyalink!',
+		];
+		$this->Sendmail_model->sendmailKonselor($body);
 		$this->load->view('home_konseling/partials/head.php');
 		$this->load->view('home_konseling/partials/header.php');
 		$this->load->view('home_konseling/v_verifikasi.php');
 		$this->load->view('home_konseling/partials/footer.php');
 		$this->load->view('home_konseling/partials/js.php');
+
 	}
 
 	public function pilih_konselor(){
