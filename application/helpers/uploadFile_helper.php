@@ -11,7 +11,7 @@ function uploadFile($filename, $path,$types,$first = true)
 		}else {
 			$ci->upload->initialize($config);
 		}
-		if ( ! $ci->upload->do_upload($filename))
+		if (!$ci->upload->do_upload($filename))
         {
                 $error = array('error' => $ci->upload->display_errors());
 				return $error;
