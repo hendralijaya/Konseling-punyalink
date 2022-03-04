@@ -91,7 +91,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label class="label_dftr">Angkatan</label>
-                            <input id="angkatan_S1" type="email" name="angkatan_S1" class="form-control" required></input>
+                            <input id="angkatan_S1" type="text" name="angkatan_S1" class="form-control" required></input>
                         </div>
                         <div class="form-group col-md-6">
                             <label class="label_dftr">Dari</label>
@@ -115,7 +115,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label class="label_dftr">Angkatan</label>
-                            <input id="angkatan_S2" type="email" name="angkatan_S2" class="form-control"></input>
+                            <input id="angkatan_S2" type="text" name="angkatan_S2" class="form-control"></input>
                         </div>
                         <div class="form-group col-md-6">
                             <label class="label_dftr">Dari</label>

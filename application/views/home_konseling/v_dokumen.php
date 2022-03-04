@@ -17,7 +17,7 @@
                     </span>
                 </p>
             </form> -->
-            <form action="<?= site_url('KonselingController/dokumenKonselor') ?>" method="POST">
+            <form action="<?= site_url('KonselingController/storeDokumenKonselor') ?>" method="POST" enctype="multipart/form-data">
                 <div class="form__file">
                     <label for="" class="label_dokumen">FotoPas (Wajib)</label>
                     <p class="label_d">Unggah FotoPas kamu dalam format jpg/jpeg dengan ukuran maksimal 2 MB</p>
