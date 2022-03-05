@@ -132,4 +132,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('Konseling_model', 'Sendmail_model');
+$autoload['model'] = array('Konseling_model', 'Sendmail_model', 'auth_model');

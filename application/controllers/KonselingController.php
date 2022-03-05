@@ -257,7 +257,6 @@ class KonselingController extends CI_Controller {
 		$this->load->view('home_konseling/v_pilih_konselor.php',$data);
 		$this->load->view('home_konseling/partials/footer.php');
 		$this->load->view('home_konseling/partials/js.php');
-
     }
 
 	public function tos(){
@@ -271,7 +270,7 @@ class KonselingController extends CI_Controller {
 	public function storeTOS()
 	{
 		$tos = $this->input->post('tos');
-		// $tos = '1'
+		$tos = '1';
 		$idKonselor = $this->session->userdata('konselor_id');
 		$data = array(
 			'TOS' => $tos,
