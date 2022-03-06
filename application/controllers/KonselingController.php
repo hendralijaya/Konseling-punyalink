@@ -345,4 +345,26 @@ class KonselingController extends CI_Controller {
 			$this->konseling_model->storeOrderKonseling($dataOrderKonseling);
 		}
 	}
+
+	public function jadwal(){
+        $this->load->view('home_konseling/partials/head.php');
+        $this->load->view('home_konseling/partials/header.php');
+        $this->load->view('home_konseling/v_jadwal_konselor.php');
+		$this->load->view('home_konseling/partials/footer.php');
+        $this->load->view('home_konseling/partials/js.php');
+    }
+
+    public function simpan_jadwal(){
+        $jumlah = count($this->input->post('jam_mulai'));
+        //print_r($jumlah);die();
+        for($i=0;$i<$jumlah;$i++){
+            $data = array(
+                    'tanggal' => $this->input->post('tanggal')[$i],
+                    'mulai'=> $this->input->post('jam_mulai')[$i],
+                    'selesai'=> $this->input->post('jam_selesai')[$i]
+                );
+            
+            $this->db->insert('jadwal_konselor',$data);
+        }    
+    }
 }

@@ -20,7 +20,50 @@
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="<?php echo base_url() ?>assets_home_konseling/js/PAcalendar.min.js"></script>
 
+
+<script>
+  $(document).ready (function() {
+  
+  $('#cityName').click(function() {
+     var from = $('#from').val();
+     var to = $('#to').val();
+     var res = from.split("-");
+     var res2 = to.split("-"); // turn the date into a list format (Split by / if needed)
+     var months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "December"]; // empty first value because it starts at 0
+     var month = months[res[1]-1];
+     var day = res[0];
+     var year = res[2];
+     var month2 = months[res2[1]-1];
+     var day2 = res2[0];
+     var year2 = res2[2];
+     var awl = $('.awl').val();
+     var akh = $('.akh').val();
+     $('.location').append("<span>" + day + ' ' + month + ' '+ year +"</span> - <span>" + day2 + ' ' + month2 + ' '+ year2 +"</span>"+
+                  "<span>" + awl + '-' + akh +"</span>");
+  });
+});
+</script>
+
+<script>
+  $('#demo').PACalendar({
+
+    from: {
+      element: $('#from')
+    }, 
+
+    to: {
+      element: $('#to')
+    }, 
+
+    mode: 'range',
+    format:'DD-MM-YYYY'
+
+
+    });
+</script>
 
 <script>
   $(document).ready(function() {
@@ -259,7 +302,7 @@ $(document).ready(function() {
                 // lalu munculkan kembali combobox kotanya
                 $(".kabupaten_kota").html(response.list_kota);
                 // $('select.wide').niceSelect('update');
-                $('.kabupaten_kota').selectric('refresh');
+                // $('.kabupaten_kota').selectric('refresh');
             },
             error: function(xhr, ajaxOptions, thrownError) { // Ketika ada error
                 alert(xhr.status + "\n" + xhr.responseText + "\n" +
@@ -351,5 +394,138 @@ $("#attachment").on('change', function(e){
 </script>
 
 
+<script>  
+ $(document).ready(function() {
+	var max_fields      = 10;
+ //maximum input boxes allowed
+	var wrapper   	  	= $("#input_sun"); //Fields wrapper
+	var add_button      = $("#add_sun"); //Add button ID
+  var wrapper_mon  		= $("#input_mon"); //Fields wrapper
+	var add_mon         = $("#add_mon"); //Add button ID
+  var wrapper_tue   	= $("#input_tue"); //Fields wrapper
+	var add_tue         = $("#add_tue"); //Add button ID
+  var wrapper_wed  		= $("#input_wed"); //Fields wrapper
+	var add_wed         = $("#add_wed"); //Add button ID
+  var wrapper_thu  		= $("#input_thu"); //Fields wrapper
+	var add_thu         = $("#add_thu"); //Add button ID
+  var wrapper_fri   	= $("#input_fri"); //Fields wrapper
+	var add_fri         = $("#add_fri"); //Add button ID
+  var wrapper_sat  		= $("#input_sat"); //Fields wrapper
+	var add_sat         = $("#add_sat");
+  var wrapper_time  	= $("#input_time"); //Fields wrapper
+	var add_time        = $("#add_time");
+	
+	var x = 0; //initlal text box count
+  var y = 0;
+  var v = 0;
+  var a = 0;
+  var b = 0;
+  var c = 0;
+  var d = 0;
+  var t = 0;
+  // sunday
+	$(add_button).click(function(e){ //on add input button click
+		e.preventDefault();
+		if(x < max_fields){ //max input box allowed
+			x++; //text box increment
+			$(wrapper).append('<span><input type="hidden" name="tanggal[]" value="Sunday"></input><input type="time" onfocus="clearError(this)" name="jam_mulai[]" class="vTimeStart sp_wrap"/> - <input type="time" onfocus="clearError(this)" name="jam_selesai[]" class="vTimeEnd sp_wrap"/><a href="#" class="remove_field"><ion-icon name="trash-outline"></ion-icon></a></span>'); //add input box
+		}
+	});
+	
+	$(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+		e.preventDefault(); $(this).parent('span').remove(); x--;
+	})
+
+  // monday
+  $(add_mon).click(function(e){ //on add input button click
+		e.preventDefault();
+		if(y < max_fields){ //max input box allowed
+			y++; //text box increment
+			$(wrapper_mon).append('<span><input type="hidden" name="tanggal[]" value="Monday"></input><input type="time" onfocus="clearError(this)" name="jam_mulai[]" class="vTimeStart sp_wrap"/> - <input type="time" onfocus="clearError(this)" name="jam_selesai[]" class="vTimeEnd sp_wrap"/><a href="#" class="remove_field"><ion-icon name="trash-outline"></ion-icon></a></span>'); //add input box
+		}
+	});
+	
+	$(wrapper_mon).on("click",".remove_field", function(e){ //user click on remove text
+		e.preventDefault(); $(this).parent('span').remove(); y--;
+	})
+
+  // tue
+  $(add_tue).click(function(e){ //on add input button click
+		e.preventDefault();
+		if(v < max_fields){ //max input box allowed
+			v++; //text box increment
+			$(wrapper_tue).append('<span><input type="hidden" name="tanggal[]" value="Tuesday"></input><input type="time" onfocus="clearError(this)" name="jam_mulai[]" class="vTimeStart sp_wrap"/> - <input type="time" onfocus="clearError(this)" name="jam_selesai[]" class="vTimeEnd sp_wrap"/><a href="#" class="remove_field"><ion-icon name="trash-outline"></ion-icon></a></span>'); //add input box
+		}
+	});
+	
+	$(wrapper_tue).on("click",".remove_field", function(e){ //user click on remove text
+		e.preventDefault(); $(this).parent('span').remove(); v--;
+	})
+
+  // wed
+  $(add_wed).click(function(e){ //on add input button click
+		e.preventDefault();
+		if(a < max_fields){ //max input box allowed
+			a++; //text box increment
+			$(wrapper_wed).append('<span><input type="hidden" name="tanggal[]" value="Sunday"></input><input type="time" onfocus="clearError(this)" name="jam_mulai[]" class="vTimeStart sp_wrap"/> - <input type="time" onfocus="clearError(this)" name="jam_selesai[]" class="vTimeEnd sp_wrap"/><a href="#" class="remove_field"><ion-icon name="trash-outline"></ion-icon></a></span>'); //add input box
+		}
+	});
+	
+	$(wrapper_wed).on("click",".remove_field", function(e){ //user click on remove text
+		e.preventDefault(); $(this).parent('span').remove(); a--;
+	})
+
+  // thu
+  $(add_thu).click(function(e){ //on add input button click
+		e.preventDefault();
+		if(b < max_fields){ //max input box allowed
+			b++; //text box increment
+			$(wrapper_thu).append('<span><input type="hidden" name="tanggal[]" value="Sunday"></input><input type="time" onfocus="clearError(this)" name="jam_mulai[]" class="vTimeStart sp_wrap"/> - <input type="time" onfocus="clearError(this)" name="jam_selesai[]" class="vTimeEnd sp_wrap"/><a href="#" class="remove_field"><ion-icon name="trash-outline"></ion-icon></a></span>'); //add input box
+		}
+	});
+	
+	$(wrapper_thu).on("click",".remove_field", function(e){ //user click on remove text
+		e.preventDefault(); $(this).parent('span').remove(); b--;
+	})
+
+  // fri
+  $(add_fri).click(function(e){ //on add input button click
+		e.preventDefault();
+		if(c < max_fields){ //max input box allowed
+			c++; //text box increment
+			$(wrapper_fri).append('<span><input type="hidden" name="tanggal[]" value="Sunday"></input><input type="time" onfocus="clearError(this)" name="jam_mulai[]" class="vTimeStart sp_wrap"/> - <input type="time" onfocus="clearError(this)" name="jam_selesai[]" class="vTimeEnd sp_wrap"/><a href="#" class="remove_field"><ion-icon name="trash-outline"></ion-icon></a></span>'); //add input box
+		}
+	});
+	
+	$(wrapper_fri).on("click",".remove_field", function(e){ //user click on remove text
+		e.preventDefault(); $(this).parent('span').remove(); c--;
+	})
+
+  // sat
+  $(add_sat).click(function(e){ //on add input button click
+		e.preventDefault();
+		if(d < max_fields){ //max input box allowed
+			d++; //text box increment
+			$(wrapper_sat).append('<span><input type="hidden" name="tanggal[]" value="Sunday"></input><input type="time" onfocus="clearError(this)" name="jam_mulai[]" class="vTimeStart sp_wrap"/> - <input type="time" onfocus="clearError(this)" name="jam_selesai[]" class="vTimeEnd sp_wrap"/><a href="#" class="remove_field"><ion-icon name="trash-outline"></ion-icon></a></span>'); //add input box
+		}
+	});
+	
+	$(wrapper_sat).on("click",".remove_field", function(e){ //user click on remove text
+		e.preventDefault(); $(this).parent('span').remove(); d--;
+	})
+
+  $(add_time).click(function(e){ //on add input button click
+		e.preventDefault();
+		if(t < max_fields){ //max input box allowed
+			t++; //text box increment
+			$(wrapper_time).append('<div><input type="hidden" name="tanggal[]" value="Sunday"></input><input type="time" onfocus="clearError(this)" name="jam_mulai[]" class="vTimeStart sp_wrap awl"/> - <input type="time" onfocus="clearError(this)" name="jam_selesai[]" class="vTimeEnd sp_wrap akh"/><a href="#" class="remove_field"><ion-icon name="trash-outline"></ion-icon></a></div>'); //add input box
+		}
+	});
+	
+	$(wrapper_time).on("click",".remove_field", function(e){ //user click on remove text
+		e.preventDefault(); $(this).parent('div').remove(); t--;
+	})
+}); 
+ </script>
 </body>
 </html>
