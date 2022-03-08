@@ -20,18 +20,17 @@
 			form.find(".next").toggle(!atTheEnd);
 			// console.log('atTheEnd='+atTheEnd);
 			form.find(".submit").toggle(atTheEnd);
-			fixStepIndicator(curIndex());
 			return form;
 		};
 		function curIndex() {
 			/*Return the current index by looking at which section has the class 'current'*/
 			return tabs.index(tabs.filter(".current"));
 		}
-		function fixStepIndicator(n) {
-			steps.each(function (i, e) {
-				i == n ? $(e).addClass("active") : $(e).removeClass("active");
-			});
-		}
+		// function fixStepIndicator(n) {
+		// 	steps.each(function (i, e) {
+		// 		i == n ? $(e).addClass("active") : $(e).removeClass("active");
+		// 	});
+		// }
 		/* Previous button is easy, just go back */
 		form.find(".previous").click(function () {
 			form.navigateTo(curIndex() - 1);

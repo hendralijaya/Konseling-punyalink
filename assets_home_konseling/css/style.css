@@ -634,9 +634,17 @@ ul#list_kategori li {
 	display: block;
 	padding: 8px;
 	background: var(--green);
+	border: 1px solid transparent;
 	border-radius: 12px;
 	color: #fff;
 	text-align: center;
+}
+
+.btn__price:hover {
+	text-decoration: none;
+	color: var(--green);
+	background: transparent;
+	border: 1px solid var(--green);
 }
 
 /* =============================== HEALTH ============================== */

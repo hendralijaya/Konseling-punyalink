@@ -3,7 +3,7 @@
         <div class="form">
             <h1 class="title">Pilih untuk konselor anda</h1>
             <p>Pilih kategori untuk materi Konseling anda, sesuai kemampuan</p>
-            <form id="jadwal" action="<?= site_url('EmailController/simpan_jadwal') ?>" method="POST">
+            <form id="jadwal" action="<?= site_url('KonselingController/simpan_jadwal') ?>" method="POST">
                 <div class="row align-items-center mb-5">
                     <div class="col-3">
                         <input type="checkbox" name="" id=""> <span>SUN</span>
@@ -95,26 +95,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="row mb-5">
-                    <!-- <div class="col-3">
-                        <input type="checkbox" name="" id=""> <span>SAT</span>
-                    </div> -->
+                <!-- <div class="row mb-5">
                     <div class="col-9 offset-3">
                         <p>to set a more specific day and time, use this feature</p>
                         <button type="button" class="btn_jadwal mb-5" data-toggle="modal" data-target="#changeCity">Add a date override</button>
                         <div class="location"></div>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="modal" id="changeCity" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <!-- <div class="modal" id="changeCity" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
-                            <!-- <div class="modal-header">
-                                <h4 class="modal-title" id="myModalLabel">Enter your City</h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div> -->
                             <div class="modal-body">
                                 <form class="form-inline">
                                     <div class="form-group">
@@ -152,12 +143,9 @@
                                     </div>
                                 </form>
                             </div>
-                            <!-- <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            </div> -->
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <div style="overflow: auto">
                     <div style="float: right">
